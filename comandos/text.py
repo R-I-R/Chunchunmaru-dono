@@ -20,6 +20,14 @@ class TextCog(commands.Cog):
     async def botqlo(self,ctx):
         await ctx.send('K wea otaku qlo bastardo ijo la comemoco')
     @commands.command()
+    async def wena(self,ctx):
+        await ctx.send('Chupala'+str(ctx.author)+ 'onii-chan',tts=True)
+    @commands.command()
+    async def nice(self,ctx): 
+        with open('archivos/img/nice.gif','rb') as fp:
+            img = discord.File(fp,'archivos/img/nice.gif')
+            await ctx.send(file=img)
+    @commands.command()
     async def dado(self,ctx):
         numero = str(random.randint(1,6))
         await ctx.send("Salio "+numero)
@@ -29,6 +37,7 @@ class TextCog(commands.Cog):
     @commands.command()
     async def tiempo(self,ctx):
         pass
+    
 
 # The setup fucntion below is neccesarry. Remember we give bot.add_cog() the name of the class in this case MembersCog.
 # When we load the cog, we use the name of the file.
