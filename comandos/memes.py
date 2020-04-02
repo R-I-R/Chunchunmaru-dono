@@ -8,7 +8,7 @@ class MemeCog(commands.Cog):
 
     @commands.command()
     async def meme(self, ctx,args):
-        if (args=="dankmemes":)
+        if (args=="dankmemes"):
             r = requests.get('https://meme-api.herokuapp.com/gimme/dankmemes/1')
             data = r.json()
             await ctx.send(data['memes'][0]['url'])

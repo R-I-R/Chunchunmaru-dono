@@ -20,64 +20,8 @@ class TextCog(commands.Cog):
     async def botqlo(self,ctx):
         await ctx.send('K wea otaku qlo bastardo ijo la comemoco')
     @commands.command()
-    async def hola(self,ctx,args):
-        if (args=='1'):
-            await ctx.send('Okaeri '+str(ctx.author.nick)+ ' onii-chan',tts=True)
-        else:
-            await ctx.send('Okaeri '+str(ctx.author.nick)+ ' onii-chan')
-    @commands.command()
     async def wena(self,ctx):
         await ctx.send('Chupala '+str(ctx.author)+ ' onii-chan',tts=True)
-    @commands.command()
-    async def nice(self,ctx): 
-        with open('archivos/img/nice.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/nice.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def ara(self,ctx): 
-        with open('archivos/img/ara.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/ara.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def pilarmen(self,ctx): 
-        with open('archivos/img/pilarmen.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/pilarmen.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def pilarmenfull(self,ctx): 
-        with open('archivos/img/pilarmen.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/pilarmen.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def callate(self,ctx): 
-        with open('archivos/img/silencio.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/silencio.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def nya(self,ctx): 
-        with open('archivos/img/nyan.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/nyan.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def tuturu(self,ctx): 
-        with open('archivos/img/tuturu.png','rb') as fp:
-            img = discord.File(fp,'archivos/img/tuturu.png')
-            await ctx.send(file=img)
-    @commands.command()
-    async def baka(self,ctx): 
-        with open('archivos/img/baka.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/baka.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def ohoho(self,ctx): 
-        with open('archivos/img/ohoho.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/ohoho.gif')
-            await ctx.send(file=img)
-    @commands.command()
-    async def risamalvada(self,ctx): 
-        with open('archivos/img/risamalvada.gif','rb') as fp:
-            img = discord.File(fp,'archivos/img/risamalvada.gif')
-            await ctx.send(file=img)
     @commands.command()
     async def dado(self,ctx):
         numero = str(random.randint(1,6))
