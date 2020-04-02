@@ -1,3 +1,4 @@
 .vscode/
 **/prueba*
 Pipfile.lock
+**/__pycache__/
