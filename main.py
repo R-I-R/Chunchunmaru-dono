@@ -1,9 +1,9 @@
 import discord
 from discord.ext import commands
-from .shintarocommands import *
-import random
+import sys, traceback
+
 TOKEN = 'Njk0NjkxOTg2ODU0MTE3NDk2.XoPU5Q._QwabIi0FAtfb_ntoVylyHKdPNw'
-client = commands.Bot(command_prefix='uwu ')
+bot = commands.Bot(command_prefix='uwu ')
 
 palanum = {
 	'si':'01',
@@ -52,7 +52,7 @@ palanum = {
 
 @client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+	print('We have logged in as {0.user}'.format(bot))
 
 @client.command(pass_context=True)
 async def hola(ctx,args):
@@ -93,3 +93,5 @@ async def age(ctx,args):
     voice_client.play(source)
     await voice_client.disconnect()
 client.run(TOKEN)
+
+bot.run(TOKEN)
