@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 
 async def playAudioFromFile(source, ctx, priority=False):
+	if ctx.author.voice == None: return
+
 	if not ctx.guild.voice_client:
 		await ctx.author.voice.channel.connect()
 
