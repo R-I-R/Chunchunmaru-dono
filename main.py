@@ -5,7 +5,12 @@ import sys, traceback
 TOKEN = 'Njk0NjkxOTg2ODU0MTE3NDk2.XoPU5Q._QwabIi0FAtfb_ntoVylyHKdPNw'
 bot = commands.Bot(command_prefix='uwu ')
 bot.remove_command('help')
-initial_extensions = ['comandos.play','comandos.text','comandos.age','comandos.memes']
+initial_extensions = ['comandos.play',
+					'comandos.text',
+					'comandos.age',
+					'comandos.memes',
+					'comandos.voice']
+
 
 if __name__ == '__main__':
 	for extension in initial_extensions:
