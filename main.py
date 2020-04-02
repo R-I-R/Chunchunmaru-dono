@@ -7,7 +7,7 @@ bot = commands.Bot(command_prefix='uwu ')
 bot.remove_command('help')
 initial_extensions = ['comandos.play',
 					'comandos.text',
-					'comandos.memes',
+					'comandos.api',
 					'comandos.voice']
 
 

@@ -29,9 +29,6 @@ class TextCog(commands.Cog):
     @commands.command()
     async def changemymind(self,ctx):
         pass
-    @commands.command()
-    async def tiempo(self,ctx):
-        pass
     
 
 # The setup fucntion below is neccesarry. Remember we give bot.add_cog() the name of the class in this case MembersCog.

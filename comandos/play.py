@@ -51,12 +51,10 @@ class PlayCommands(commands.Cog):
 
     @commands.command()
     async def age(self, ctx, args):
-        if(len(args)==2):
-            await playAudioFromFile('archivos/age2sonidos/'+ args +'.mp3')
-        elif(len(args)==1):
-            await playAudioFromFile('archivos/age2sonidos/0'+ args +'.mp3')
+        if(args.isalpha()):
+            await playAudioFromFile('archivos/age2sonidos/'+ palanum[args] +'.mp3',ctx)
         else:
-            await playAudioFromFile('archivos/age2sonidos/'+ palanum[args] +'.mp3')
+            await playAudioFromFile('archivos/age2sonidos/'+ f'{int(args):02}' +'.mp3',ctx)
     async def play(self, ctx, url):
         await playAudioFromFile('archivos/sonidos/Nice.mp3', ctx)
 
