@@ -5,7 +5,10 @@ import sys, traceback
 TOKEN = 'Njk0NjkxOTg2ODU0MTE3NDk2.XoPU5Q._QwabIi0FAtfb_ntoVylyHKdPNw'
 bot = commands.Bot(command_prefix='uwu ')
 
-initial_extensions = ['comandos.play']
+initial_extensions = ['comandos.play',
+					'comandos.voice',
+					
+					]
 
 if __name__ == '__main__':
 	for extension in initial_extensions:
