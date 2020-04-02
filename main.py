@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from shintarocommands import *
+from .shintarocommands import *
 import random
 TOKEN = 'Njk0NjkxOTg2ODU0MTE3NDk2.XoPU5Q._QwabIi0FAtfb_ntoVylyHKdPNw'
 client = commands.Bot(command_prefix='uwu ')
