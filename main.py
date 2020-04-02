@@ -82,11 +82,14 @@ async def text(ctx,args):
         await ctx.message.channel.send('El comando no esta programado, te-he uwu')
 @client.command(pass_context=True)
 async def age(ctx,args):
-    canal = ctx.message.channel
-    voice_client= client.voice_client_in(canal)
+    canal = ctx.message.author.voice.channel
+    voice_client= await canal.connect()
+    print(voice_client)
+    source = await discord.FFmpegOpusAudio.from_probe("")
     if(len(args[0])==2):
-        voice_client.play("/archivos/age2sonidos/"+args[0]+".mp3")
+        source = await discord.FFmpegOpusAudio.from_probe("/archivos/age2sonidos/"+args[0]+".mp3")
     else:
-        voice_client.play("/archivos/age2sonidos/"+palanum[args[0]]+".mp3")
+        source = await discord.FFmpegOpusAudio.from_probe("/archivos/age2sonidos/"+palanum[args[0]]+".mp3")
+    voice_client.play(source)
     await voice_client.disconnect()
 client.run(TOKEN)
