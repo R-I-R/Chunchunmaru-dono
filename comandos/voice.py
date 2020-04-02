@@ -1,10 +1,13 @@
 import discord
 from discord.ext import commands
 
-def playAudioFromFile(source, voice_client, priority=False):
-	if not voice_client.is_playing() or priority:
+async def playAudioFromFile(source, ctx, priority=False):
+	if not ctx.guild.voice_client:
+		await ctx.author.voice.channel.connect()
+
+	if not ctx.guild.voice_client.is_playing() or priority:
 		audio = discord.FFmpegPCMAudio(source)
-		voice_client.play(audio)
+		ctx.guild.voice_client.play(audio)
 
 class VoiceCommands(commands.Cog):
 	def __init__(self, bot):
