@@ -2,3 +2,4 @@
 **/prueba*
 Pipfile.lock
 **/__pycache__/
+credentials.py

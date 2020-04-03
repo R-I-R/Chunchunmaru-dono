@@ -1,8 +1,9 @@
 import discord
 from discord.ext import commands
 import sys, traceback
+from credentials import Credential
 
-TOKEN = 'Njk0NjkxOTg2ODU0MTE3NDk2.XoPU5Q._QwabIi0FAtfb_ntoVylyHKdPNw'
+TOKEN = Credential.discord
 bot = commands.Bot(command_prefix='uwu ')
 bot.remove_command('help')
 initial_extensions = ['comandos.play',

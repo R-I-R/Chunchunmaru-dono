@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-from comandos.voice import playAudioFromFile
+from comandos.voice import playAudioFromFile, YTDLSource, YTDLError
+
 palanum = {
 	'si':'01',
 	'no':'02',
@@ -55,8 +56,38 @@ class PlayCommands(commands.Cog):
             await playAudioFromFile('archivos/age2sonidos/'+ palanum[args] +'.mp3',ctx)
         else:
             await playAudioFromFile('archivos/age2sonidos/'+ f'{int(args):02}' +'.mp3',ctx)
-    async def play(self, ctx, url):
-        await playAudioFromFile('archivos/sonidos/Nice.mp3', ctx)
+            
+    @commands.command()
+    async def play(self, ctx, *,search:str):
+        if ctx.author.voice == None: return
+
+        if not ctx.guild.voice_client:
+            await ctx.author.voice.channel.connect()
+
+
+        async with ctx.typing():
+            try:
+                source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop)
+            except YTDLError as e:
+                await ctx.send('An error occurred while processing this request: {}'.format(str(e)))
+            else:
+                if not ctx.guild.voice_client.is_playing():
+                    ctx.guild.voice_client.play(source)
+
+    @commands.command()
+    async def stop(self,ctx):
+        if ctx.guild.voice_client:
+            ctx.guild.voice_client.stop()
+    
+    @commands.command()
+    async def pause(self,ctx):
+        if ctx.guild.voice_client:
+            ctx.guild.voice_client.pause()
+
+    @commands.command()
+    async def resume(self,ctx):
+        if ctx.guild.voice_client:
+            ctx.guild.voice_client.resume()
 
     @commands.command()
     async def hola(self,ctx,args):
